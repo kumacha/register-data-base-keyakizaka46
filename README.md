@@ -23,20 +23,20 @@
 
 ```
 {
-id: 1,
-type: "1期生",
-graduate: true,
-name: "石森 虹花",
-subname: "いしもり にじか",
-nickname: ["にじか"],
-old: 23,
-birth: "1997年5月7日",
-from: "宮城県",
-src: "src",
-color: ["虹", "白"],
-unit: ["五人囃子"],
-createdAt: 2021年8月7日2:00:00,
-updatedAt: 2021年8月7日2:00:00,
+id: 1,  //追加した順番
+type: "1期生",  //何期生か
+graduate: true,  //trueならば卒業済み
+name: "石森 虹花",  //漢字氏名
+subname: "いしもり にじか",  //ひらがな氏名
+nickname: ["にじか"],  //ニックネーム
+old: 23,  //年齢
+birth: "1997年5月7日",  //誕生日
+from: "宮城県",  //出身
+src: "src",  //画像のURL
+color: ["虹", "白"],  //サイリウムカラー
+unit: ["五人囃子"],  //所属ユニット
+createdAt: 2021年8月7日2:00:00,  //追加日
+updatedAt: 2021年8月7日2:00:00,  //更新日
 }
 ```
 
