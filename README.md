@@ -5,6 +5,11 @@
 欅坂46の非公式Webページに掲載する内容をデータベース（Cloud Firestore）に登録するアプリケーションです。<br>
 権限を与えられた人がログインすることでデータベースの編集が可能です。
 
+## 使用技術
+
+フロントエンドにNuxt.js, UIComponentにVuetify, バックエンドにFirebaseを用いています。<br>
+データベースはCloud Firestore, ホスティングはFirebase Hosting, ユーザ認証にFirebase Authenticationを利用しています。
+
 ## データベースに登録可能な内容
 
 ・欅坂46の歴史<br>
@@ -12,10 +17,29 @@
 ・ディスコグラフィー<br>
 ・ギャラリー（YouTube関連）<br>
 
-## 使用技術
+## データベース構造（member）
 
-フロントエンドにNuxt.js, UIComponentにVuetify, バックエンドにFirebaseを用いています。<br>
-データベースはCloud Firestore, ホスティングはFirebase Hosting, ユーザ認証にFirebase Authenticationを利用しています。
+例）石森 虹花
+
+```
+{
+id: 1,
+type: "1期生",
+graduate: true,
+name: "石森 虹花",
+subname: "いしもり にじか",
+nickname: ["にじか"],
+old: 23,
+birth: "1997年5月7日",
+from: "宮城県",
+src: "src",
+color: ["虹", "白"],
+unit: ["五人囃子"],
+createdAt: 2021年8月7日2:00:00,
+updatedAt: 2021年8月7日2:00:00,
+}
+```
+
 
 
 ## Build Setup
