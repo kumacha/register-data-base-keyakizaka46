@@ -17,11 +17,29 @@
 ・ディスコグラフィー<br>
 ・ギャラリー（YouTube関連）<br>
 
+## データベース構造（history）
+
+```
+
+{
+id: 1,  //追加した順番
+date: "2016年3月17日",  //dayjs使えるとよし
+title: "欅坂46ワンマンライブ",   //歴史のタイトル
+place: "有明コロシアム",   //ライブの場所
+detail: "Live開幕直後の平手友梨奈の「有明コロシアム、かかってこい」の一言で会場が痺れた。"　　　　　 //説明文
+type: "Live",　　　  //Live or Single or Album or TV or Announce
+src: "src",    //画像のパスURL
+createdAt: 2021年8月7日2:00:00,  //追加日,
+updatedAt: 2021年8月7日2:00:00,  //更新日,
+}
+
+```
 ## データベース構造（member）
 
 例）石森 虹花
 
 ```
+
 {
 id: 1,  //追加した順番
 type: "1期生",  //何期生か
@@ -38,8 +56,44 @@ unit: ["五人囃子"],  //所属ユニット
 createdAt: 2021年8月7日2:00:00,  //追加日
 updatedAt: 2021年8月7日2:00:00,  //更新日
 }
+
 ```
 
+
+## データベース構造（discography）
+
+```
+
+{
+id: 1,  //追加した順番
+title: "不協和音",
+nubmer: "4",
+type: "TYPE-A",
+songs:["不協和音", "W-KEYAKIZAKAの唄", "微笑みが悲しい","不協和音 off-vocal ver.", "W-KEYAKIZAKAの唄 off-vocal ver.", "微笑みが悲しい off-vocal ver.", ],
+src: image.src,
+createdAt: 2021年8月7日2:00:00,  //追加日
+updatedAt: 2021年8月7日2:00:00,  //更新日
+}
+```
+
+
+
+
+## データベース構造（gallery）
+```
+
+{
+id: 1,  //追加した順番
+title: "サイレントマジョリティー",   //タイトル
+URL: "youtube.com",   //YouTubeのタイトル
+src: "image.src",     //写真のパス
+type: "single",　　   //single or coupling or trailer 
+number: 1億,     //再生回数
+createdAt: 2021年8月7日2:00:00,  //追加日
+updatedAt: 2021年8月7日2:00:00,  //更新日
+}
+
+```
 
 
 ## Build Setup
