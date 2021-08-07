@@ -1,4 +1,4 @@
-# register-data-base-keyakizaka46
+# 欅坂46データベース
 
 ## このWebアプリは何？
 
