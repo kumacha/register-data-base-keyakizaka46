@@ -1,4 +1,101 @@
-# register-data-base-keyakizaka46
+# 欅坂46データベース
+
+## このWebアプリは
+
+欅坂46の非公式Webページに掲載する内容をデータベース（Cloud Firestore）に登録するアプリケーションです。<br>
+権限を与えられた人がログインすることでデータベースの編集が可能です。
+また、データベースを閲覧することも可能。
+
+## 使用技術
+
+フロントエンドにNuxt.js, UIComponentにVuetify, バックエンドにFirebaseを用いています。<br>
+データベースはCloud Firestore, ホスティングはFirebase Hosting, ユーザ認証にFirebase Authenticationを利用しています。
+
+## データベースに登録可能な内容
+
+・欅坂46の歴史<br>
+・欅坂46のメンバー情報<br>
+・ディスコグラフィー<br>
+・ギャラリー（YouTube関連）<br>
+
+## データベース構造（history）
+
+```
+
+{
+id: 1,  //追加した順番
+date: "2016年3月17日",  //dayjs使えるとよし
+title: "欅坂46ワンマンライブ",   //歴史のタイトル
+place: "有明コロシアム",   //ライブの場所
+detail: "Live開幕直後の平手友梨奈の「有明コロシアム、かかってこい」の一言で会場が痺れた。"　　　　　 //説明文
+type: "Live",　　　  //Live or Single or Album or TV or Announce
+src: "src",    //画像のパスURL
+createdAt: 2021年8月7日2:00:00,  //追加日,
+updatedAt: 2021年8月7日2:00:00,  //更新日,
+}
+
+```
+## データベース構造（member）
+
+例）石森 虹花
+
+```
+
+{
+id: 1,  //追加した順番
+type: "1期生",  //何期生か
+graduate: true,  //trueならば卒業済み
+name: "石森 虹花",  //漢字氏名
+subname: "いしもり にじか",  //ひらがな氏名
+nickname: ["にじか"],  //ニックネーム
+old: 23,  //年齢
+birth: "1997年5月7日",  //誕生日
+from: "宮城県",  //出身
+src: "src",  //画像のURL
+color: ["虹", "白"],  //サイリウムカラー
+unit: ["五人囃子"],  //所属ユニット
+createdAt: 2021年8月7日2:00:00,  //追加日
+updatedAt: 2021年8月7日2:00:00,  //更新日
+}
+
+```
+
+
+## データベース構造（discography）
+
+```
+
+{
+id: 1,  //追加した順番
+title: "不協和音",
+nubmer: "4",
+type: "TYPE-A",
+songs:["不協和音", "W-KEYAKIZAKAの唄", "微笑みが悲しい","不協和音 off-vocal ver.", "W-KEYAKIZAKAの唄 off-vocal ver.", "微笑みが悲しい off-vocal ver.", ],
+src: image.src,
+createdAt: 2021年8月7日2:00:00,  //追加日
+updatedAt: 2021年8月7日2:00:00,  //更新日
+}
+```
+
+
+
+
+## データベース構造（gallery）
+```
+
+{
+id: 1,  //追加した順番
+title: "サイレントマジョリティー",   //タイトル
+URL: "youtube.com",   //YouTubeのタイトル
+src: "image.src",     //写真のパス
+type: "single",　　   //single or coupling or trailer 
+number: 1億,     //再生回数
+createdAt: 2021年8月7日2:00:00,  //追加日
+updatedAt: 2021年8月7日2:00:00,  //更新日
+}
+
+```
+
 
 ## Build Setup
 
@@ -17,53 +114,3 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
