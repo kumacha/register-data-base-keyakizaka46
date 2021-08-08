@@ -1,11 +1,18 @@
 <template>
   <div>
-    <p class="member-title">メンバー追加ページ</p>
+    <p class="member-title">{{ title }}</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    title: {
+      required: true,
+      type: String,
+    },
+  },
+};
 </script>
 
 <style>

@@ -1,7 +1,7 @@
 <template>
   <div class="add-member">
     <v-container>
-      <Title></Title>
+      <Title :title="member_title"></Title>
       <v-row justify="center">
         <v-col sm="12">
           <v-row>
@@ -95,23 +95,26 @@
                 </v-row>
                 <v-row>
                   <v-col
-                    ><v-text-field
+                    ><v-select
                       v-model="memberUnitFirst"
                       label="所属ユニット①"
+                      :items="units"
                       required
                       validate-on-blur
                   /></v-col>
                   <v-col
-                    ><v-text-field
+                    ><v-select
                       v-model="memberUnitSecond"
                       label="所属ユニット②"
+                      :items="units"
                       required
                       validate-on-blur
                   /></v-col>
                   <v-col
-                    ><v-text-field
+                    ><v-select
                       v-model="memberUnitThird"
                       label="所属ユニット③"
+                      :items="units"
                       required
                       validate-on-blur
                   /></v-col>
@@ -146,6 +149,7 @@ export default {
   },
   data() {
     return {
+      member_title: 'メンバー追加ページ',
       kanjiFirst: '',
       kanjiSecond: '',
       hiraganaFirst: '',
@@ -163,6 +167,21 @@ export default {
       registerValid: false,
       items: ['1期生', '2期生'],
       graduates: ['現役', '卒業済'],
+      units: [
+        'ゆいちゃんず',
+        'てちねる',
+        'てちねるゆいちゃんず',
+        '青空とMARRY',
+        'FIVE CARDS',
+        '五人囃子',
+        '156',
+        '線香姉妹',
+        '少女フレンズ',
+        'てちソロ',
+        'ねるソロ',
+        'ずーみんソロ',
+        'その他',
+      ],
     };
   },
   methods: {
@@ -226,7 +245,7 @@ export default {
 .add-member {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0px;
+  margin-bottom: 100px;
   max-width: 800px;
   z-index: 100;
 }

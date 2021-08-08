@@ -1,13 +1,11 @@
 <template>
-  <div v-show="!isMobile" class="site-header">
-    <nav class="navigation">
-      <ul class="global-navigation">
-        <li v-for="(menu, index) in menus" :key="index">
-          <p @click="pageJump({ path: menu.path })" v-text="menu.name"></p>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav v-show="!isMobile" class="navigation">
+    <ul class="global-navigation">
+      <li v-for="(menu, index) in menus" :key="index">
+        <p @click="pageJump({ path: menu.path })" v-text="menu.name"></p>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -17,12 +15,10 @@ export default {
       windowWidth: 900,
       menus: [
         { id: 1, name: 'TOP', path: '/' },
-        { id: 2, name: 'ABOUT', path: '/about' },
-        { id: 3, name: 'HISTORY', path: '/history' },
-        { id: 4, name: 'DISCOGRAPHY', path: '/discography' },
-        { id: 5, name: 'MEMBER', path: '/member' },
-        { id: 6, name: 'GALLERY', path: '/gallery' },
-        { id: 7, name: 'LINK', path: '/link' },
+        { id: 3, name: 'HISTORY', path: '/history/add' },
+        { id: 4, name: 'DISCOGRAPHY', path: '/discography/add' },
+        { id: 5, name: 'MEMBER', path: '/member/add' },
+        { id: 6, name: 'GALLERY', path: '/gallery/add' },
       ],
     };
   },
