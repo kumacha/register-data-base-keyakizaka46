@@ -149,7 +149,7 @@ export default {
   },
   data() {
     return {
-      member_title: 'メンバー追加ページ',
+      member_title: 'MEMBER追加ページ',
       kanjiFirst: '',
       kanjiSecond: '',
       hiraganaFirst: '',
@@ -188,7 +188,7 @@ export default {
     project_add() {
       console.log('処理スタート');
       const db = firebase.firestore();
-      const member = db.collection('members');
+      const member = db.collection('Members');
       const timestamp = firebase.firestore.Timestamp.now();
       console.log(timestamp);
       // firebase.auth().onAuthStateChanged((user) => {

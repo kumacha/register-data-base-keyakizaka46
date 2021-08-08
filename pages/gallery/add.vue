@@ -87,7 +87,7 @@ export default {
   },
   data() {
     return {
-      gallery: 'ギャラリー追加ページ',
+      gallery: 'GALLERY追加ページ',
       title: '',
       top_url: '',
       youtube_url: '',
@@ -133,13 +133,13 @@ export default {
     gallery_add() {
       console.log('処理スタート');
       const db = firebase.firestore();
-      const member = db.collection('Gallery');
+      const gallery = db.collection('Gallery');
       const timestamp = firebase.firestore.Timestamp.now();
       console.log(timestamp);
       // firebase.auth().onAuthStateChanged((user) => {
       //   if (user) {
       // const uid = user.uid;
-      member
+      gallery
         .add({
           title: this.title,
           src: this.top_url,
